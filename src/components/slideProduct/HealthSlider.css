@@ -1,0 +1,119 @@
+.health-slider {
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* العنوان وزرار View All */
+.health-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 17, 0.158);
+  width: 95%;
+  margin-inline: auto ;
+}
+
+.health-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.health-header a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.health-header a:hover {
+
+  color: #2563eb;
+}
+
+/* عنصر السلايدر */
+.health-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+}
+
+.health-img {
+  width: 170px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: none; /* شيل أي لون داخلي */
+  /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);  */
+}
+
+.health-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.health-img img:hover {
+  transform: scale(1.05);
+}
+
+.health-item p {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.health-item p:hover {
+  color: #2563eb;
+}
+
+/* إزالة أي خلفية افتراضية للـ SwiperSlide */
+.swiper-slide {
+  background: transparent !important;
+}
+
+/* الأسهم - مخفية في الأول */
+.health-slider .swiper-button-prev,
+.health-slider .swiper-button-next {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #2564eba4;
+  color: white !important;
+  border-radius: 50%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.health-slider .swiper-button-prev:hover,
+.health-slider .swiper-button-next:hover {
+  color: #fff;
+  background-color: #000;
+}
+/* لما أعمل hover على السلايدر تظهر */
+.health-slider:hover .swiper-button-prev,
+.health-slider:hover .swiper-button-next {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+/* شكل الأيقونة */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}

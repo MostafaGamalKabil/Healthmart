@@ -1,0 +1,108 @@
+/* ===== Banner Section ===== */
+.banner {
+    margin: 40px 0;
+}
+
+.banner .container {
+    width: 100%;
+    margin: auto;
+}
+
+/* ===== Cards Wrapper ===== */
+.cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* عشان يبقى Responsive */
+    width: 100%;
+
+}
+
+/* ===== Card Style ===== */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 32%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.3s ;
+    cursor: pointer;
+}
+
+.card:hover img{
+    transition: 0.3s;
+    scale: 1.1;
+}
+
+/* ===== Details ===== */
+.card .details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* ===== Price & Button ===== */
+.price-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-div span {
+    font-size: 14px;
+    color: #333;
+}
+
+.price-div button {
+    background-color: #1e88e5;
+    border: none;
+    padding: 6px 14px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.price-div button:hover {
+    background-color: #1565c0;
+}
+
+/* ===== Image Style ===== */
+.card img {
+    width: 120px;
+    height: auto;
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 992px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cards-wrapper {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,299 @@
+/* Top Header */
+.top-header {
+    background-color: #f8f9fa;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.top-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-header-left {
+    display: flex;
+    gap: 24px;
+}
+
+.top-header-left span {
+    cursor: pointer;
+    color: #001;
+    transition: color 0.3s;
+}
+
+.top-header-left span:hover {
+    color: #0277bd;
+}
+
+.top-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-number {
+    color: #3b83f6ba;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+
+.free-shipping {
+    color: #001;
+    font-weight: 400;
+    white-space: 1px;
+}
+
+/* Top Header End */
+
+
+
+/* Main Header */
+.main-header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+ 
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+/* Logo */
+
+
+.logo-icon .logo-img {
+    width: 200px;
+
+}
+.logo-text {
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Search Bar */
+.search-container {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 32px;
+    
+}
+
+.search-bar {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  
+}
+
+.search-bar input {
+      background: #EFF4F8;
+}
+
+
+
+.search-select {
+    padding: 14px 16px;
+    background: #EFF4F8;
+    border: none;
+    border-right: 1px solid #d1d5db;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+    
+}
+
+.search-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-button {
+      background: #EFF4F8;
+  
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+.search-button i {
+    font-size: 18px;
+}
+
+.search-button:hover {
+   color: #0277bd;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+}
+
+.user-action .fa-regular , .fa-solid {
+    
+    transition: 0.3s;
+}
+.user-action .fa-regular:hover  {
+   color:#0277bd ;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #5aa4e5;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.total_badge {
+        position: absolute;
+    top: 12px;
+    left: 28px;
+    background: #5aa4e5;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.user-text-sub {
+    color: #6b7280;
+}
+
+.user-text-main {
+    font-weight: 600;
+}
+
+/* Main Header End */
+
+
+
+/* Navigation */
+.main-nav {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    color: #3b82f6;
+
+}
+
+.nav-badge {
+    padding: 0 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.badge-sale {
+    background: #b1e7d59d;
+    color: #2d837b;
+    
+}
+
+.badge-hot {
+    background: #FCE3EB;
+    color: #EE6C95;
+}
+
+.super-discount {
+    color: #ef4444;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+.super-discount i {
+    font-size: 17px;
+}
+.super-discount:hover span {
+cursor: pointer;
+    color:#26A9E2;
+}

@@ -1,0 +1,39 @@
+
+/* start features */
+
+.features{
+    margin: 50px 0;
+    
+}
+.features .container{
+    display: flex;
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 2px solid #8fc1ed;
+}
+
+.features .container .feature_item{
+    width: 18%;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.features .container .feature_item img{
+    width: 40px;
+}
+
+.features .container .feature_item h4{
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.features .container .feature_item p{
+    font-size: 11px;
+    color: #8f8b8b;
+}
+
+/* end features */ 
