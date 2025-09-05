@@ -1,0 +1,99 @@
+.auth-boxs {
+  width: 600px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px 20px 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.auth-boxs.reg {
+  padding-bottom: 30px;
+}
+small {
+  color: rgb(130, 130, 130);
+  font-size: 12px;
+  font-weight: 300;
+  word-spacing: 1px;
+}
+
+small a {
+  color: #000;
+  text-decoration: none;
+}
+.auth-boxs h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.auth-boxs form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-boxs label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.auth-boxs label span {
+  color: red;
+}
+
+.auth-boxs input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.auth-boxs input:focus {
+  border-color: #0070f3;
+}
+
+.auth-boxs button {
+  background-color: #0071f3ae;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.auth-boxs button:hover {
+  background-color: #000;
+}
+
+.form-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.remember {
+  font-size: 14px;
+  color: #333;
+}
+
+.lost-password {
+  font-size: 12px;
+  color: #0071f39b;
+  text-decoration: none;
+  text-align: start;
+  border: none;
+}
+
+.lost-password:hover {
+  color: #000;
+}
+

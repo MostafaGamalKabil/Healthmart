@@ -1,0 +1,309 @@
+.product-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 1400px;
+  border-radius: 10px;
+}
+
+/* صور المنتج */
+.product-images {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  margin-right: 50px;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 90px;
+  height: 92px;
+  border-radius: 6px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.main-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.main-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* تفاصيل المنتج */
+.product-info {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Rating + Price + Review */
+.rating-price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.star {
+  color: #f1c40f;
+  font-size: 18px;
+}
+
+.reviews {
+  color: #3498db;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
+.new-price {
+  color: #e74c3c;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Cart + Quantity Wrapper */
+.cart-quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+}
+
+/* Quantity */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #F7FAFC;
+
+  border-radius: 8px;
+  padding: 5px 10px;
+
+}
+
+.quantity-control button {
+  width: 32px;
+  height: 32px;
+  border: none;
+ background: none;
+  color: #001;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+
+
+.quantity-control span {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* الأزرار */
+.add-to-cart {
+  background-color: #3498db;
+  color: white;
+  width: 370px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #000;
+}
+
+.buy-now {
+    background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 15px;
+  width: 515px; 
+}
+
+.buy-now:hover {
+  background-color: #000;
+}
+
+/* Description list */
+.description-list {
+  margin: 20px 0;
+  padding-left: 20px;
+  color: #44444480;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.description-list li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* أيقونات */
+.product-actions {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #333;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #00000030;
+  width: 515px;
+}
+
+.product-actions span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-actions span:hover {
+  color: #3498db;
+}
+
+/* Extra info */
+.extra-info {
+ 
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.payment-info {
+  margin-top: 15px;
+   background-color: #f8f9fa;
+   width: 500px;
+   height: 100px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   align-items: center;
+   justify-content: center;
+}
+.payment-info p {
+  font-size: 13px;
+}
+
+.payment-info img {
+  max-width: 250px;
+}
+
+/* المنتج غير موجود */
+.not-found {
+  text-align: center;
+  padding: 40px;
+}
+
+.extra-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.extra-info p.eye {
+  margin-bottom: 25px;
+  color: #000000b9;
+}
+
+.extra-info p.mark {
+  margin-top: 10px;
+  color: #0000009d;
+}
+
+.back-home {
+  color: #1b4a4b;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+/* الشحن تحت الصورة */
+.shipping {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.ship-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.ship-item svg {
+  font-size: 18px;
+  color: #3498db;
+}

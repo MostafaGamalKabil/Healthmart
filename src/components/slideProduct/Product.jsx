@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { products } from "../../../src/productsData"; // استدعاء الداتا
+import { products } from "../../productsData"; // استدعاء الداتا
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -8,10 +8,16 @@ import "swiper/css/navigation";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
+import Link from "next/link";
+
+// ✅ استدعاء Cart Context
+import { useCart } from "../../../src/context/CartContext";
 
 export default function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Baby Care");
+
+  const { addToCart } = useCart(); // ✅ دالة إضافة للكارت
 
   useEffect(() => {
     setFilteredProducts(products.filter((p) => p.category === activeCategory));
@@ -61,15 +67,23 @@ export default function ProductsPage() {
             <div className="product-card">
               {/* Icons */}
               <div className="product-icons">
-                <IoMdHeartEmpty className="icon heart-icon" title="Add to Wishlist" />
-                <IoEyeOutline className="icon share-icon" title="View Product" />
+                <IoMdHeartEmpty
+                  className="icon heart-icon"
+                  title="Add to Wishlist"
+                />
+                <IoEyeOutline
+                  className="icon share-icon"
+                  title="View Product"
+                />
               </div>
 
-              <img
-                src={product.image}
-                alt={product.title}
-                className="product-image"
-              />
+              <Link href={`/product/${product.id}`}>
+                <img
+                  src={`/${product.image}`}
+                  alt={product.title}
+                  className="product-image cursor-pointer"
+                />
+              </Link>
 
               <h3 className="product-title">
                 {product.title.length > 35
@@ -90,7 +104,13 @@ export default function ProductsPage() {
                   )}
                   ${product.price}
                 </p>
-                <IoCartOutline fontSize={30} className="cart-icon" />
+                {/* ✅ عند الضغط يضيف المنتج للكارت */}
+                <IoCartOutline
+                  fontSize={30}
+                  className="cart-icon"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => addToCart(product)}
+                />
               </div>
             </div>
           </SwiperSlide>

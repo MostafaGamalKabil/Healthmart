@@ -1,0 +1,41 @@
+.title-account {
+    text-align: center;
+    background-color: rgba(239 , 244 , 248);
+    padding: 25px;
+}
+.title-account h4 {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.my-account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  padding: 20px;
+}
+
+.form-wrapper {
+  display: flex;
+  gap: 30px;
+
+  padding: 30px;
+  border-radius: 12px;
+ 
+  max-width: 1300px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+}
