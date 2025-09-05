@@ -16,7 +16,7 @@ const Header2 = () => {
   const router = useRouter();
   const { cartItems, removeFromCart } = useCart();
 
-  // ✅ الإجمالي
+  // ✅ حساب الإجمالي
   const cartTotal = cartItems.reduce(
     (acc, item) => acc + item.price * (item.qty || 1),
     0
@@ -24,7 +24,7 @@ const Header2 = () => {
 
   return (
     <>
-      {/* الهيدر العادي */}
+      {/* الهيدر */}
       <header className="main-header">
         <div className="container">
           <div className="header-content">
@@ -92,7 +92,41 @@ const Header2 = () => {
         </div>
       </header>
 
-      {/* Cart Sidebar */}
+    {/* ✅ Login Modal */}
+{showLogin && (
+  <div className="popup-overlay" onClick={() => setShowLogin(false)}>
+    {/* زرار X فوق يمين الشاشة السودة */}
+    <button className="popup-close-global" onClick={() => setShowLogin(false)}>
+      <IoCloseOutline size={28} />
+    </button>
+
+    <div className="popup-box" onClick={(e) => e.stopPropagation()}>
+      
+      <form className="login-form">
+        <label>Username or email *</label>
+        <input type="text" required />
+
+        <label>Password *</label>
+        <input type="password" required />
+
+        <div className="form-remember">
+          <input type="checkbox" id="remember" />
+          <label htmlFor="remember">Remember me</label>
+        </div>
+
+        <button type="submit" className="btn-primary full-width">Login</button>
+
+        <Link href="/resetPassword" className="forgot-link">Lost your password?</Link>
+        <p className="signup-text">
+          Don’t have an account yet? <Link href="/my_account">Sign up</Link>
+        </p>
+      </form>
+    </div>
+  </div>
+)}
+
+
+      {/* ✅ Cart Sidebar */}
       {showCart && (
         <div className="cart-overlay" onClick={() => setShowCart(false)}>
           <aside className="cart-panel" onClick={(e) => e.stopPropagation()}>
@@ -108,10 +142,7 @@ const Header2 = () => {
             {cartItems.length === 0 ? (
               <div className="cart-empty">
                 <p>Your cart is empty</p>
-                <small>
-                  No items in your cart. Go on, fill it up with something you
-                  love!
-                </small>
+                <small>No items in your cart. Go on, fill it up with something you love!</small>
                 <button className="btn-primary">Start Shopping</button>
               </div>
             ) : (
@@ -129,13 +160,7 @@ const Header2 = () => {
                         <h5>{item.title}</h5>
                         <div className="cart-price">
                           {item.qty || 1} ×{" "}
-                          <span
-                            style={{
-                              color: "red",
-                              fontSize: "15px",
-                              fontWeight: "bold",
-                            }}
-                          >
+                          <span className="price">
                             ${item.price}
                           </span>
                         </div>
@@ -159,15 +184,9 @@ const Header2 = () => {
                     <strong>${cartTotal.toFixed(2)}</strong>
                   </div>
                   <div className="cart-actions">
-                    {cartItems.length > 0 && (
-                      <Link
-                        href={`/product/${cartItems[0].id}`} 
-                        className="btn-ghost"
-                        onClick={() => setShowCart(false)}
-                      >
-                        View Cart
-                      </Link>
-                    )}
+                    <Link href="/cart" className="btn-ghost">
+                      View Cart
+                    </Link>
                     <Link href="/checkout" className="btn-primary">
                       Checkout
                     </Link>
