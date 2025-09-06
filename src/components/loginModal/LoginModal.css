@@ -1,0 +1,105 @@
+
+
+/* ================= LOGIN POPUP ================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.93); /* سودة غامقة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* زرار الـ X برة فوق يمين */
+.popup-close-global {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  z-index: 2100;
+}
+
+.popup-box {
+  position: relative;
+  background: #fff;
+  padding: 30px 25px;
+  width: 360px;
+  border-radius: 5px;
+
+  animation: fadeIn 0.3s ease;
+  transition: 0.3s;
+}
+
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.login-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.full-width {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #042f5a80;
+  text-decoration: underline;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dcd5d5;
+}
+
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 300;
+  color: #888;
+}
+.signup-text a {
+  color: #0073e698;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.signup-text a:hover {
+ color: #000;
+}
+

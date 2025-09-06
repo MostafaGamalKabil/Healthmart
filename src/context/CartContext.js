@@ -5,51 +5,83 @@ import { createContext, useContext, useState, useEffect } from "react";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  // 🟢 اقرأ من localStorage مرة واحدة عند إنشاء الـ state
-  const [cartItems, setCartItems] = useState(() => {
-    if (typeof window !== "undefined") {
-      const storedCart = localStorage.getItem("cart");
-      return storedCart ? JSON.parse(storedCart) : [];
-    }
-    return [];
-  });
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // 🟢 أي تغيير في cartItems → يتخزن في localStorage
+  // ✅ تحميل البيانات من localStorage عند أول تحميل للصفحة
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("cart", JSON.stringify(cartItems));
+    try {
+      const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+      const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      setCart(savedCart);
+      setWishlist(savedWishlist);
+      setIsInitialized(true);
+    } catch (error) {
+      console.error("Error loading localStorage data:", error);
     }
-  }, [cartItems]);
+  }, []);
 
-  // ✅ إضافة منتج
+  // ✅ تحديث localStorage عند أي تغيير في الكارت
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart, isInitialized]);
+
+  // ✅ تحديث localStorage عند أي تغيير في الويشليست
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    }
+  }, [wishlist, isInitialized]);
+
+  // ✅ إضافة منتج للكارت
   const addToCart = (product) => {
-    setCartItems((prev) => {
-      const exist = prev.find((item) => item.id === product.id);
-      if (exist) {
-        return prev.map((item) =>
-          item.id === product.id ? { ...item, qty: item.qty + 1 } : item
-        );
-      }
-      return [...prev, { ...product, qty: 1 }];
-    });
-  };
-
-  // ✅ إزالة منتج
-  const removeFromCart = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
-  };
-
-  // ✅ مسح الكارت كله
-  const clearCart = () => {
-    setCartItems([]);
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("cart");
+    const exist = cart.find((item) => item.id === product.id);
+    if (!exist) {
+      setCart([...cart, { ...product, qty: 1 }]); // إضافة الكمية للمنتج
     }
+  };
+
+  // ✅ حذف منتج من الكارت
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  // ✅ إضافة أو إزالة منتج من الويشليست (Toggle)
+  const toggleWishlist = (product) => {
+    const exist = wishlist.find((item) => item.id === product.id);
+    if (exist) {
+      // لو المنتج موجود → هنشيله
+      const updatedWishlist = wishlist.filter((item) => item.id !== product.id);
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    } else {
+      // لو مش موجود → نضيفه
+      const updatedWishlist = [...wishlist, product];
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    }
+  };
+
+  // ✅ حذف منتج من الويشليست
+  const removeFromWishlist = (id) => {
+    const updatedWishlist = wishlist.filter((item) => item.id !== id);
+    setWishlist(updatedWishlist);
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
   };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        wishlist,
+        toggleWishlist,
+        removeFromWishlist,
+      }}
     >
       {children}
     </CartContext.Provider>

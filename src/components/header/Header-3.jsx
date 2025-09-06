@@ -38,8 +38,7 @@ const Header3 = () => {
               </div>
             </div>
             <div className="super-discount">
-              <i className="fa-solid fa-bolt" />
-              <HiOutlineBolt fontSize={22} className="fa-solid fa-bolt"/>
+              <HiOutlineBolt fontSize={22} />
               <span>Super Discount</span>
             </div>
           </div>

@@ -301,111 +301,6 @@ cursor: pointer;
 }
 
 
-/* ================= LOGIN POPUP ================= */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.93); /* سودة غامقة */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-/* زرار الـ X برة فوق يمين */
-.popup-close-global {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  z-index: 2100;
-}
-
-.popup-box {
-  position: relative;
-  background: #fff;
-  padding: 30px 25px;
-  width: 360px;
-  border-radius: 5px;
-
-  animation: fadeIn 0.3s ease;
-  transition: 0.3s;
-}
-
-
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; 
-}
-
-.login-form label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #777;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.form-remember {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-}
-
-.full-width {
-  width: 100%;
-  padding: 12px;
-  font-size: 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.forgot-link {
-  display: block;
-  text-align: right;
-  margin-top: 8px;
-  font-size: 13px;
-  color: #042f5a80;
-  text-decoration: underline;
-  text-align: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dcd5d5;
-}
-
-
-.signup-text {
-  margin-top: 15px;
-  font-size: 13px;
-  text-align: center;
-  font-weight: 300;
-  color: #888;
-}
-.signup-text a {
-  color: #0073e698;
-  font-weight: 400;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.signup-text a:hover {
- color: #000;
-}
-
-
-
 
 /* Lost Password Link */
 .lost-password {
@@ -465,188 +360,91 @@ cursor: pointer;
 .signup-link a:hover {
   text-decoration: underline;
 }
-/* Overlay */
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  justify-content: flex-end;
-  z-index: 999;
+
+
+/* ===== Menu Button ===== */
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 15px;
+  display: none; /* desktop hidden */
 }
 
-/* Sidebar */
-.cart-panel {
-  width: 400px;
-  max-width: 95vw;
+/* ===== Side Menu ===== */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
   height: 100%;
   background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.1);
-  animation: slideIn .3s forwards;
+  animation: slideIn 0.3s ease forwards;
 }
-
 @keyframes slideIn {
-  from { transform: translateX(100%); }
+  from { transform: translateX(-100%); }
   to { transform: translateX(0); }
 }
 
-/* Header */
-.cart-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: #f1f5f9;
-  padding: 12px 16px;
-}
-
-.cart-header h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.cart-close {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #777;
-}
-
-/* Empty state */
-.cart-empty {
- 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 24px;
-  gap: 12px;
-  margin-top: 200px;
-}
-.cart-empty p { font-size: 19px; margin: 0; font-weight: 500; }
-.cart-empty small { color: #666; line-height: 1.5; }
-
-/* Items */
-.cart-body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.cart-items {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-}
-
-.cart-item {
-  display: grid;
-  grid-template-columns: 80px 1fr 20px;
-  gap: 12px;
-  align-items: start;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.cart-thumb {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.cart-thumb img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border: 1px solid #ddd;
-  padding: 4px;
-  border-radius: 4px;
-}
-
-.cart-price {
-  font-size: 13px;
-  color: #111;
-  margin-top: 10px;
-}
-
-.cart-info h5 {
-  font-size: 14px;
-  margin: 0;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.cart-remove {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: red;
-  border-radius: 50%;
-
-}
-.cart-remove:hover { color: #fff; background-color: rgb(170, 5, 5); font-weight: bold;  }
-
-/* Footer */
-.cart-footer {
-  border-top: 1px solid #eee;
-  padding: 14px 12px;
-}
-
-.cart-subtotal {
+.side-menu-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
-  font-size: 15px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.cart-subtotal span {
-  color: #777;
-  font-size: 18px;
-  font-weight: 500;
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 16px;
 }
 
-.cart-subtotal strong {
-  color: red;
-}
-
-.cart-actions {
+.mobile-search {
+  margin-top: 20px;
   display: flex;
   gap: 10px;
 }
-
-.btn-primary,
-.btn-ghost {
+.mobile-search input {
   flex: 1;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 4px;
-  text-decoration: none;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
-
-.btn-primary {
-  background: #0d6dfdbc;
-  color: #fff;
+.mobile-search button {
+  background: #26A9E2;
   border: none;
-  width: 300px;
-  padding: 12px;
-  font-size: 17px;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.btn-ghost {
-  background: #111;
-  color: #fff;
-  border: none;
-}
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  /* Show menu button */
+  .menu-btn {
+    display: block;
+  }
 
-.btn-primary:hover { background-color: #000; }
-.btn-ghost:hover { background-color: #0277bd; }
+  /* Hide nav links + discount on small screens */
+  .nav-links,
+  .super-discount,
+  .user-text {
+    display: none !important;
+  }
+
+  /* Only icons visible */
+  .user-actions {
+    gap: 16px;
+  }
+
+  /* Search hides in header, goes into drawer */
+  .search-container {
+    display: none;
+  }
+}
