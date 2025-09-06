@@ -1,11 +1,11 @@
 import "./Header.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineBolt } from "react-icons/hi2";
+import { FiSearch } from "react-icons/fi";
 
 const Header3 = () => {
   return (
     <>
-      {/* Navigation */}
       <nav className="main-nav">
         <div className="container">
           <div className="nav-content">
@@ -44,6 +44,21 @@ const Header3 = () => {
           </div>
         </div>
       </nav>
+
+      {/* ✅ Search يظهر هنا في الموبايل */}
+      <div className="mobile-search-bar">
+        <div className="search-bar">
+        
+          <input
+            type="text"
+            placeholder="Search for products..."
+            className="search-input"
+          />
+          <button className="search-button">
+            <FiSearch fontSize={20} />
+          </button>
+        </div>
+      </div>
     </>
   );
 };

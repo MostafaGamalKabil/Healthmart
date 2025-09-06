@@ -1,58 +1,56 @@
-/* Top Header */
+/* ===== Top Header ===== */
 .top-header {
-    background-color: #f8f9fa;
-    padding: 8px 0;
-    font-size: 14px;
+  background: #f5f5f5;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
 }
 
 .top-header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-header-left {
-    display: flex;
-    gap: 24px;
-}
-
-.top-header-left span {
-    cursor: pointer;
-    color: #001;
-    transition: color 0.3s;
-}
-
-.top-header-left span:hover {
-    color: #0277bd;
+  display: flex;
+  gap: 15px;
 }
 
 .top-header-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.phone-number {
-    color: #3b83f6ba;
-    font-weight: 400;
-    font-size: 14px;
-
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .free-shipping {
-    color: #001;
-    font-weight: 400;
-    white-space: 1px;
+  color: #000;
+  font-weight: 500;
 }
 
-/* Top Header End */
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .top-header-left,
+  .contact-info {
+    display: none; /* يخفي About, Blog, Contact, FAQ + Contact us */
+  }
 
+  .top-header-right {
+    width: 100%;
+    justify-content: center; /* free shipping في النص */
+  }
+
+  .free-shipping {
+    display: block;
+    text-align: center;
+  }
+}
 
 
 /* Main Header */
@@ -152,7 +150,7 @@
 .user-actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .user-action {
@@ -364,9 +362,9 @@ cursor: pointer;
 
 /* ===== Menu Button ===== */
 .menu-btn {
-  font-size: 28px;
+  font-size: 20px;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 5px;
   display: none; /* desktop hidden */
 }
 
@@ -440,11 +438,329 @@ cursor: pointer;
 
   /* Only icons visible */
   .user-actions {
-    gap: 16px;
+    gap: 5px;
   }
 
   /* Search hides in header, goes into drawer */
   .search-container {
     display: none;
   }
+}
+
+
+
+/* ===== Main Header ===== */
+.main-header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ===== Search Bar ===== */
+.search-container {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 32px;
+}
+.search-bar {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.search-bar input {
+  background: #eff4f8;
+}
+.search-select {
+  padding: 14px 16px;
+  background: #eff4f8;
+  border: none;
+  border-right: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+}
+.search-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.search-input::placeholder {
+  color: #9ca3af;
+}
+.search-button {
+  background: #eff4f8;
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.search-button:hover {
+  color: #0277bd;
+}
+
+
+.user-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+}
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #5aa4e5;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total_badge {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  background: #5aa4e5;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+.user-text-sub {
+  color: #6b7280;
+}
+.user-text-main {
+  font-weight: 600;
+}
+
+/* ===== Navigation ===== */
+.main-nav {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 0;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.nav-item:hover {
+  color: #3b82f6;
+}
+.nav-badge {
+  padding: 0 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.badge-sale {
+  background: #b1e7d59d;
+  color: #2d837b;
+}
+.badge-hot {
+  background: #fce3eb;
+  color: #ee6c95;
+}
+.super-discount {
+  color: #ef4444;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 16px;
+}
+.mobile-search {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.mobile-search input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.mobile-search button {
+  background: #26a9e2;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .menu-btn {
+    display: block;
+  }
+  /* Hide top header links */
+  .top-header-left,
+  .nav-links,
+  .super-discount,
+  .search-container,
+  .user-text {
+    display: none !important;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  /* زرار المنيو يظهر */
+  .menu-btn {
+    display: block;
+  }
+
+  /* الهيدر الأول اللينكات تختفي وتظهر في النص */
+  .top-header-left {
+    display: none;
+  }
+  .top-header-content {
+    justify-content: center;
+    text-align: center;
+    font-size: 12px; /* أصغر */
+  }
+
+  /* الهيدر الثالث */
+  .nav-links,
+  .super-discount {
+    display: none !important;
+  }
+
+  /* إخفاء التكست (My Account / Total) */
+  .user-text {
+    display: none !important;
+  }
+
+  /* السيرش يختفي من النص ويظهر في الدراور */
+  .search-container {
+    display: none;
+  }
+}
+
+/* زرار المنيو جنب اللوجو */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* السيرش في الموبايل */
+.mobile-search-bar {
+  display: none;
+  padding: 10px;
+  background: white;
+  width: 300px;
+  margin-inline: auto;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  /* Desktop search hidden */
+  .desktop-search {
+    display: none !important;
+  }
+
+  /* Show mobile search under nav */
+  .mobile-search-bar {
+    display: block !important;
+  }
+
+  /* إخفاء لينكات الهيدر 1 و الهيدر 3 */
+  .top-header-left,
+  .nav-links,
+  .super-discount {
+    display: none !important;
+  }
+
+  /* اللينكات في الهيدر1 تصغر وتروح النص */
+  .top-header-content {
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* إخفاء التكست بتاع الأكونت والكارت */
+  .user-text {
+    display: none !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-icon .logo-img {
+    width: 150px;
+  }
+
+    .user-actions {
+    gap: 1px;
+  }
+  
 }

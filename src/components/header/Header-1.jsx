@@ -1,5 +1,5 @@
 import { LiaViber } from "react-icons/lia";
-import './Header.css'
+import "./Header.css";
 
 const Header1 = () => {
   return (
