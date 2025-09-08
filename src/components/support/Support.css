@@ -4,94 +4,104 @@
 }
 
 .features .container {
-  display: flex;
   background-color: #fff;
   padding: 35px;
   border-radius: 5px;
-  justify-content: space-between;
-  flex-wrap: wrap;
   border: 2px solid #8fc1ed;
-  gap: 20px;
 }
 
 /* ====== FEATURE ITEM ====== */
-.features .container .feature_item {
-  width: 18%;
-  min-width: 220px;
+.feature_item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  gap: 15px;
   background-color: #fff;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  cursor: grab;
 }
 
-.features .container .feature_item img {
-  width: 40px;
+/* ✅ الصورة */
+.feature_item .feature_img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
 }
 
-.features .container .feature_item h4 {
+/* ✅ النصوص */
+.feature_item .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature_item .text h4 {
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 15px;
+  color: #333;
 }
 
-.features .container .feature_item p {
-  font-size: 11px;
+.feature_item .text p {
+  font-size: 13px;
   color: #8f8b8b;
 }
 
+/* ====== SWIPER CUSTOMIZATION ====== */
+.products-slider {
+  padding-bottom: 35px;
+}
+
+.products-slider .swiper-button-prev,
+.products-slider .swiper-button-next {
+  width: 35px;
+  height: 35px;
+  background-color: #2564eba4;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  top: 40%;
+}
+
+.products-slider .swiper-button-prev:hover,
+.products-slider .swiper-button-next:hover {
+  background-color: #2564eb;
+  color: white;
+}
+
+.products-slider .swiper-button-prev::after,
+.products-slider .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /* ====== RESPONSIVE DESIGN ====== */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  .feature_item {
+    flex-direction: column; /* ✅ الصورة فوق والكلام تحت */
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .features .container {
-    flex-wrap: nowrap;                 /* العناصر جنب بعض */
-    overflow-x: auto;                  /* سكرول أفقي */
-    scroll-snap-type: x mandatory;     /* تثبيت العنصر في السنتر */
-    -webkit-overflow-scrolling: touch; /* سحب ناعم في الموبايل */
-    gap: 15px;
-    padding: 20px 10px;
+    border: none;
   }
 
-  /* شريط السكرول */
-  .features .container::-webkit-scrollbar {
-    height: 8px; /* عرض شريط السكرول */
+  .feature_item .feature_img {
+    width: 65px;
+    height: 65px;
   }
 
-  .features .container::-webkit-scrollbar-track {
-    background: #f1f1f1; /* لون الخلفية */
-    border-radius: 10px;
+  .feature_item .text h4 {
+    font-size: 16px;
   }
 
-  .features .container::-webkit-scrollbar-thumb {
-    background: #2564eba4; /* لون شريط السكرول */
-    border-radius: 10px;
-  }
-
-  .features .container::-webkit-scrollbar-thumb:hover {
-    background: #2564eb;
-  }
-
-  .features .container .feature_item {
-    width: 80%;
-    min-width: 80%;
-    justify-content: flex-start;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    scroll-snap-align: center; /* يخلي العنصر في نص الشاشة */
-  }
-
-  .features .container .feature_item img {
-    width: 45px;
-  }
-
-  .features .container .feature_item h4 {
-    font-size: 15px;
-  }
-
-  .features .container .feature_item p {
-    font-size: 12px;
+  .feature_item .text p {
+    font-size: 13px;
   }
 }
-/* ====== END FEATURES ====== */

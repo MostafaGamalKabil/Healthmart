@@ -313,3 +313,44 @@ border: none;
   font-size: 18px !important;
   font-weight: bold;
 }
+
+
+/* ✅ إخفاء الأسهم في الشاشات الكبيرة (لابتوب و أكبر) */
+@media (min-width: 1025px) {
+  .products-slider .swiper-button-prev,
+  .products-slider .swiper-button-next {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+/* ✅ إظهار الأسهم في الموبايل + التابلت (لحد 1024px) */
+@media (max-width: 1024px) {
+  .products-slider .swiper-button-prev,
+  .products-slider .swiper-button-next {
+    opacity: 1 !important; /* تظهر */
+    visibility: visible !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #2564eba4;
+    color: white !important;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 20;
+  }
+
+  /* تأثير الهوفر في الموبايل + التابلت */
+  .products-slider .swiper-button-prev:hover,
+  .products-slider .swiper-button-next:hover {
+    background-color: #000;
+    color: #fff !important;
+  }
+
+  /* حجم أيقونة السهم */
+  .products-slider .swiper-button-prev::after,
+  .products-slider .swiper-button-next::after {
+    font-size: 18px !important;
+    font-weight: bold;
+  }
+}

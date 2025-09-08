@@ -9,8 +9,6 @@ import { FaArrowRight, FaStar } from "react-icons/fa";
 import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import Link from "next/link";
-
-// ✅ استدعاء Cart Context
 import { useCart } from "../../../src/context/CartContext";
 
 export default function ProductsPage() {
@@ -59,13 +57,14 @@ export default function ProductsPage() {
         navigation={true}
         modules={[Navigation]}
         spaceBetween={15}
+        grabCursor={true}
         breakpoints={{
-          320: { slidesPerView: 2, spaceBetween: 10 }, // ✅ موبايل صغير: يعرض منتجين
-          480: { slidesPerView: 2, spaceBetween: 12 }, // ✅ موبايل متوسط: برضو منتجين
-          640: { slidesPerView: 3, spaceBetween: 15 }, // تابلت صغير
-          768: { slidesPerView: 4, spaceBetween: 18 }, // تابلت متوسط
-          1024: { slidesPerView: 5, spaceBetween: 20 }, // لابتوب صغير
-          1280: { slidesPerView: 6, spaceBetween: 20 }, // لابتوب كبير
+          320: { slidesPerView: 2, spaceBetween: 12 }, // ✅ موبايل صغير: عنصر واحد باين واللي بعده جزء بسيط
+          480: { slidesPerView: 2, spaceBetween: 12 }, // ✅ موبايل متوسط
+          640: { slidesPerView: 2, spaceBetween: 15 },   // تابلت صغير
+          768: { slidesPerView: 3, spaceBetween: 18 },   // تابلت متوسط
+          1024: { slidesPerView: 4, spaceBetween: 20 },  // لابتوب صغير
+          1280: { slidesPerView: 5, spaceBetween: 20 },  // لابتوب كبير
         }}
         className="products-slider"
       >

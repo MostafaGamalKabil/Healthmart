@@ -1,37 +1,36 @@
-
-/* newsletter */
-
-.newsletter{
+/* ====== NEWSLETTER SECTION ====== */
+.newsletter {
     background: #fff;
 }
 
-.newsletter .container{
+.newsletter .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 0;
+    gap: 20px;
 }
-.newsletter .text{
+
+.newsletter .text {
     width: 50%;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-
-.newsletter .text h4{
+.newsletter .text h4 {
     font-size: 24px;
     font-weight: 500;
     color: black;
 }
 
-.newsletter .text p{
+.newsletter .text p {
     margin: 12px 0;
     color: #918e93;
     font-size: 13px;
 }
 
-.newsletter .newsletter_form{
+.newsletter .newsletter_form {
     width: 40%;
     border: 1px solid rgb(179, 174, 174);
     border-right: none;
@@ -40,13 +39,14 @@
     position: relative;
 }
 
-.newsletter .newsletter_form input{
+.newsletter .newsletter_form input {
     padding: 20px 175px 20px 20px;
     outline: none;
     border: none;
     width: 100%;
 }
-.newsletter .newsletter_form button{
+
+.newsletter .newsletter_form button {
     background: #5aa4e5;
     outline: none;
     border: none;
@@ -58,4 +58,53 @@
     cursor: pointer;
     font-size: 18px;
     color: #fff;
+}
+
+/* ====== RESPONSIVE FOR SMALL SCREENS ====== */
+@media (max-width: 768px) {
+    .newsletter .container {
+        flex-direction: column;      /* ✅ الكلام فوق الفورم */
+        align-items: center;         /* ✅ توسيط العناصر */
+        gap: 20px;
+    }
+
+    .newsletter .text {
+        width: 90%;                  /* ✅ الكلام ياخد 90% من الشاشة */
+        text-align: center;          /* ✅ توسيط الكلام */
+    }
+
+    .newsletter .newsletter_form {
+        width: 90%;                  /* ✅ الفورم ياخد 90% من الشاشة */
+    }
+
+    .newsletter .newsletter_form input {
+        padding: 15px 140px 15px 15px;
+        font-size: 14px;
+    }
+
+    .newsletter .newsletter_form button {
+        width: 110px;
+        font-size: 16px;
+    }
+}
+
+/* ====== EXTRA SMALL SCREENS (موبايل صغير) ====== */
+@media (max-width: 480px) {
+    .newsletter .text h4 {
+        font-size: 20px;
+    }
+
+    .newsletter .text p {
+        font-size: 12px;
+    }
+
+    .newsletter .newsletter_form input {
+        padding: 12px 120px 12px 12px;
+        font-size: 13px;
+    }
+
+    .newsletter .newsletter_form button {
+        width: 100px;
+        font-size: 14px;
+    }
 }
