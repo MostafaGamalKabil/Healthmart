@@ -18,8 +18,20 @@
   flex-direction: column;
   box-shadow: -4px 0 12px rgba(0,0,0,0.1);
   animation: slideIn .3s forwards;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
 }
 
+/* في الموبايل */
+@media screen and (max-width: 768px) {
+  .cart-panel {
+    width: 75% !important;  /* الكارت ياخد 75% من العرض */
+    max-width: 75% !important;
+    border-radius: 0;
+  }
+}
+
+/* Animation */
 @keyframes slideIn {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
@@ -30,9 +42,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: sticky; /* يبقى ثابت فوق */
+  top: 0;
   background: #f1f5f9;
   padding: 12px 16px;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
 }
 
 .cart-header h4 {
@@ -54,7 +69,6 @@
 
 /* Empty state */
 .cart-empty {
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,17 +81,21 @@
 .cart-empty p { font-size: 19px; margin: 0; font-weight: 500; }
 .cart-empty small { color: #666; line-height: 1.5; }
 
-/* Items */
+/* Body */
 .cart-body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-y: auto; /* Scroll رأسي بس */
+  padding-bottom: 80px; /* عشان الفوتر يبان كويس */
 }
 
+/* Items */
 .cart-items {
   flex: 1;
   padding: 12px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .cart-item {
@@ -87,6 +105,8 @@
   align-items: start;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cart-thumb {
@@ -124,14 +144,21 @@
   cursor: pointer;
   color: red;
   border-radius: 50%;
-
 }
-.cart-remove:hover { color: #fff; background-color: rgb(170, 5, 5); font-weight: bold;  }
+.cart-remove:hover {
+  color: #fff;
+  background-color: rgb(170, 5, 5);
+  font-weight: bold;
+}
 
 /* Footer */
 .cart-footer {
   border-top: 1px solid #eee;
   padding: 14px 12px;
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
 .cart-subtotal {
@@ -170,7 +197,6 @@
   background: #0d6dfdbc;
   color: #fff;
   border: none;
-  width: 300px;
   padding: 12px;
   font-size: 17px;
 }
