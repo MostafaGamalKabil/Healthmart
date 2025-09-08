@@ -17,7 +17,7 @@ export default function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Baby Care");
 
-  const { addToCart, wishlist, toggleWishlist } = useCart(); // ✅ جلب دوال من الكونتكست
+  const { addToCart, wishlist, toggleWishlist } = useCart();
 
   useEffect(() => {
     setFilteredProducts(products.filter((p) => p.category === activeCategory));
@@ -58,8 +58,15 @@ export default function ProductsPage() {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        spaceBetween={10}
-        slidesPerView={6}
+        spaceBetween={15}
+        breakpoints={{
+          320: { slidesPerView: 2, spaceBetween: 10 }, // ✅ موبايل صغير: يعرض منتجين
+          480: { slidesPerView: 2, spaceBetween: 12 }, // ✅ موبايل متوسط: برضو منتجين
+          640: { slidesPerView: 3, spaceBetween: 15 }, // تابلت صغير
+          768: { slidesPerView: 4, spaceBetween: 18 }, // تابلت متوسط
+          1024: { slidesPerView: 5, spaceBetween: 20 }, // لابتوب صغير
+          1280: { slidesPerView: 6, spaceBetween: 20 }, // لابتوب كبير
+        }}
         className="products-slider"
       >
         {filteredProducts.map((product) => {
@@ -119,7 +126,6 @@ export default function ProductsPage() {
                     )}
                     ${product.price}
                   </p>
-                  {/* ✅ إضافة المنتج للكارت */}
                   <IoCartOutline
                     fontSize={30}
                     className="cart-icon"

@@ -117,7 +117,7 @@ const Header2 = () => {
       {showMenu && (
         <div className="side-menu">
           <div className="side-menu-header">
-            <span>Menu</span>
+        <span></span>
             <IoCloseOutline
               fontSize={28}
               onClick={() => setShowMenu(false)}
@@ -126,18 +126,22 @@ const Header2 = () => {
           </div>
           <div className="side-menu-links">
             {/* Nav links from Header3 */}
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Categories</a>
-            <a href="#">Products</a>
-            <a href="#">Top deals</a>
-            <a href="#">Elements</a>
-
+           <ul className="top-ul">
+             <a href="#">Home</a>
+             <a href="#">Shop</a>
+             <a href="#">Categories</a>
+             <a href="#">Products</a>
+             <a href="#">Top deals</a>
+             <a href="#">Elements</a>
+           </ul>
+           
             {/* Links from Header1 */}
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQs</a>
+         <ul className="bottom-ul">
+             <a href="#">About Us</a>
+             <a href="#">Blog</a>
+             <a href="#">Contact Us</a>
+             <a href="#">FAQs</a>
+         </ul>
           </div>
         </div>
       )}

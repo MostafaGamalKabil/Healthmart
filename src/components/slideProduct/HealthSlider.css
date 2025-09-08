@@ -14,7 +14,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 17, 0.158);
   width: 95%;
-  margin-inline: auto ;
+  margin-inline: auto;
 }
 
 .health-header h2 {
@@ -34,7 +34,6 @@
 }
 
 .health-header a:hover {
-
   color: #2563eb;
 }
 
@@ -53,8 +52,7 @@
   height: 180px;
   overflow: hidden;
   border-radius: 6px;
-  background: none; /* شيل أي لون داخلي */
-  /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);  */
+  background: none;
 }
 
 .health-img img {
@@ -83,32 +81,24 @@
   background: transparent !important;
 }
 
-/* الأسهم - مخفية في الأول */
+/* الأسهم - ظاهرة دايمًا */
 .health-slider .swiper-button-prev,
 .health-slider .swiper-button-next {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1 !important; /* دايمًا ظاهرة */
+  visibility: visible !important;
   width: 40px !important;
   height: 40px !important;
   background-color: #2564eba4;
   color: white !important;
   border-radius: 50%;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
-
 
 .health-slider .swiper-button-prev:hover,
 .health-slider .swiper-button-next:hover {
   color: #fff;
-  background-color: #000;
-}
-/* لما أعمل hover على السلايدر تظهر */
-.health-slider:hover .swiper-button-prev,
-.health-slider:hover .swiper-button-next {
-  opacity: 1;
-  visibility: visible;
-
+  background-color: #2563eb;
 }
 
 /* شكل الأيقونة */
@@ -116,4 +106,22 @@
 .swiper-button-next::after {
   font-size: 18px !important;
   font-weight: bold;
+}
+
+/* تصغير الصور في الموبايل */
+@media (max-width: 480px) {
+  .health-img {
+    width: 140px;
+    height: 150px;
+  }
+
+  .health-header h2 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .health-header a {
+    font-size: 13px;
+    font-weight: 300;
+  }
 }

@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import './HealthSlider.css'
+import "./HealthSlider.css";
 
 const categories = [
   { title: "Health Care", img: "/img/healthcare.jpg" },
@@ -31,7 +31,6 @@ export default function HealthSlider() {
         </a>
       </div>
 
-
       {/* Swiper */}
       <Swiper
         modules={[Navigation]}
@@ -41,10 +40,13 @@ export default function HealthSlider() {
           prevEl: ".swiper-button-prev",
         }}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 10 },
-          640: { slidesPerView: 2, spaceBetween: 15 },
-          1024: { slidesPerView: 4, spaceBetween: 20 },
-          1280: { slidesPerView: 7, spaceBetween: 20 },
+          320: { slidesPerView: 2, spaceBetween: 10 }, // ✅ موبايل صغير: يعرض منتجين
+          480: { slidesPerView: 2, spaceBetween: 12 }, // ✅ موبايل متوسط: برضو منتجين
+          640: { slidesPerView: 3, spaceBetween: 15 }, // تابلت صغير
+          768: { slidesPerView: 4, spaceBetween: 18 }, // تابلت متوسط
+          1024: { slidesPerView: 5, spaceBetween: 20 }, // لابتوب صغير
+          1280: { slidesPerView: 6, spaceBetween: 20 }, // لابتوب كبير
+          1536: { slidesPerView: 7, spaceBetween: 24 }, // شاشات كبيرة
         }}
         className="health-swiper"
       >

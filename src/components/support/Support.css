@@ -1,39 +1,97 @@
-
-/* start features */
-
-.features{
-    margin: 50px 0;
-    
-}
-.features .container{
-    display: flex;
-    background-color: #fff;
-    padding: 35px;
-    border-radius: 5px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 2px solid #8fc1ed;
+/* ====== START FEATURES ====== */
+.features {
+  margin: 50px 0;
 }
 
-.features .container .feature_item{
-    width: 18%;
-    min-width: 220px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.features .container {
+  display: flex;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 5px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 2px solid #8fc1ed;
+  gap: 20px;
 }
 
-.features .container .feature_item img{
-    width: 40px;
+/* ====== FEATURE ITEM ====== */
+.features .container .feature_item {
+  width: 18%;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.features .container .feature_item h4{
-    margin-bottom: 5px;
-    font-size: 13px;
-}
-.features .container .feature_item p{
-    font-size: 11px;
-    color: #8f8b8b;
+.features .container .feature_item img {
+  width: 40px;
 }
 
-/* end features */ 
+.features .container .feature_item h4 {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.features .container .feature_item p {
+  font-size: 11px;
+  color: #8f8b8b;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .features .container {
+    flex-wrap: nowrap;                 /* العناصر جنب بعض */
+    overflow-x: auto;                  /* سكرول أفقي */
+    scroll-snap-type: x mandatory;     /* تثبيت العنصر في السنتر */
+    -webkit-overflow-scrolling: touch; /* سحب ناعم في الموبايل */
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  /* شريط السكرول */
+  .features .container::-webkit-scrollbar {
+    height: 8px; /* عرض شريط السكرول */
+  }
+
+  .features .container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* لون الخلفية */
+    border-radius: 10px;
+  }
+
+  .features .container::-webkit-scrollbar-thumb {
+    background: #2564eba4; /* لون شريط السكرول */
+    border-radius: 10px;
+  }
+
+  .features .container::-webkit-scrollbar-thumb:hover {
+    background: #2564eb;
+  }
+
+  .features .container .feature_item {
+    width: 80%;
+    min-width: 80%;
+    justify-content: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    scroll-snap-align: center; /* يخلي العنصر في نص الشاشة */
+  }
+
+  .features .container .feature_item img {
+    width: 45px;
+  }
+
+  .features .container .feature_item h4 {
+    font-size: 15px;
+  }
+
+  .features .container .feature_item p {
+    font-size: 12px;
+  }
+}
+/* ====== END FEATURES ====== */
