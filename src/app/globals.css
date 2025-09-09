@@ -29,11 +29,10 @@ body {
 
 
 
-
-/* الحاوية الرئيسية */
 .products-container {
   padding: 50px 30px;
   width: 100%;
+  overflow-x: hidden; 
 }
 
 
@@ -126,7 +125,8 @@ border: none;
 .products-slider {
   width: 100%;
   padding: 30px 10px;
-  overflow: visible !important;
+  overflow: hidden !important; 
+  position: relative; /* مهم للأسهم */
 }
 
 /* الكارت */
@@ -279,27 +279,28 @@ border: none;
   background-color: #000;
 }
 
+
 /* الأسهم */
 .products-slider .swiper-button-prev,
 .products-slider .swiper-button-next {
   opacity: 0 !important;
   visibility: hidden !important;
   transition: all 0.3s ease;
-  width: 40px !important;
-  height: 40px !important;
+  width: 35px !important;
+  height: 35px !important;
   background-color: #2564eba4;
   color: white !important;
   border-radius: 50%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-   transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  top: 50% !important; /* ✅ يتوسطوا عمودياً */
+  transform: translateY(-50%); /* ✅ ضبط المحاذاة */
 }
 
 .products-slider:hover .swiper-button-prev,
-.products-slider:hover .swiper-button-next,
-.products-slider .swiper-slide:hover ~ .swiper-button-prev,
-.products-slider .swiper-slide:hover ~ .swiper-button-next {
-  opacity: 1;
-  visibility: visible;
+.products-slider:hover .swiper-button-next {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .products-slider .swiper-button-prev:hover,
@@ -312,6 +313,7 @@ border: none;
 .products-slider .swiper-button-next::after {
   font-size: 18px !important;
   font-weight: bold;
+   right: 5px !important;
 }
 
 
