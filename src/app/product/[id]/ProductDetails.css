@@ -307,3 +307,117 @@
   font-size: 18px;
   color: #3498db;
 }
+
+/* يمنع الشاشة تتحرك يمين/شمال */
+body {
+  overflow-x: hidden;
+}
+
+/* ريسبونسيف - لابتوب صغير وتابلت */
+@media (max-width: 992px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .product-images {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    gap: 15px;
+  }
+
+  .main-image-wrapper {
+    order: -1; /* ✅ يخلي الصورة الكبيرة فوق */
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+  }
+
+  .main-image {
+    max-height: 350px;
+  }
+
+  .thumbnail-list {
+    order: 0; /* ✅ الصور الصغيرة تيجي تحت الكبيرة */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  .product-info {
+    width: 100%;
+    max-width: 600px;
+    text-align: left; /* ✅ كل الكلام يبقى على أقصى الشمال */
+  }
+
+  .add-to-cart,
+  .buy-now,
+  .product-actions,
+  .payment-info {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+/* ريسبونسيف - موبايل */
+@media (max-width: 576px) {
+  .product-title {
+    font-size: 22px;
+    text-align: left; /* ✅ بدل center تبقى شمال */
+  }
+
+  .rating-price {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; /* ✅ تبقى شمال */
+  }
+
+  .description-list {
+    font-size: 14px;
+    padding-left: 15px;
+    text-align: left; /* ✅ تبقى شمال */
+  }
+
+  /* زرار الكمية + Add to Cart جنب بعض */
+  .cart-quantity-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quantity-control {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    flex: 1; /* ياخد باقي المساحة */
+  }
+
+  /* الأيقونات شمال وكل اتنين تحت بعض */
+  .product-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ عمودين */
+    gap: 10px;
+    justify-items: flex-start; /* ✅ يخليهم شمال */
+  }
+
+  .product-actions button,
+  .product-actions a {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .payment-info img {
+    max-width: 180px;
+  }
+}

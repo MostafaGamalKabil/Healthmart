@@ -1,15 +1,30 @@
+/* Auth.css (معدّل) */
+
+/* ===== قاعدة الصفحة ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* يمنع التحريك يمين/شمال */
+}
+
+/* حاوية الفورم */
 .auth-boxs {
   width: 600px;
   margin: 30px auto;
   background: #fff;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 20px 20px;
   border: 1px solid #ddd;
   border-radius: 6px;
 }
 
+/* حالة الريجستر */
 .auth-boxs.reg {
   padding-bottom: 30px;
 }
+
+/* النصوص الصغيره */
 small {
   color: rgb(130, 130, 130);
   font-size: 12px;
@@ -21,19 +36,25 @@ small a {
   color: #000;
   text-decoration: none;
 }
+
+/* عنوان الصندوق */
 .auth-boxs h2 {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 600;
   color: #222;
+  text-align: left;
 }
 
+/* الفورم: ترتيب رأسي، لكن نخلي العناصر تملأ العرض */
 .auth-boxs form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: stretch;
 }
 
+/* الليبل */
 .auth-boxs label {
   font-size: 14px;
   font-weight: 500;
@@ -46,18 +67,21 @@ small a {
   color: red;
 }
 
+/* الاينبوت */
 .auth-boxs input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
+  width: 100%;
 }
 
 .auth-boxs input:focus {
   border-color: #0070f3;
 }
 
+/* الازرار - افتراضى */
 .auth-boxs button {
   background-color: #0071f3ae;
   color: #fff;
@@ -67,33 +91,158 @@ small a {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s;
-  width: fit-content;
+  width: fit-content; /* نسيبها تتصغر تلقائيًا */
 }
 
 .auth-boxs button:hover {
   background-color: #000;
 }
 
+/* خانة خيارات الفورم: نستخدم flex - لكن سلوك سيتغير في الميديا كويري */
 .form-options {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 12px;
+  align-items: center; /* مهم عشان متسنترين عمودياً */
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
+/* label التذكر (checkbox + text) */
 .remember {
+  display: inline-flex; /* يخلي checkbox والنص في سطر واحد ويتسنتروا */
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   color: #333;
+  margin: 0;
 }
 
+/* ضبط شكل التشيك بوكس وقياسه */
+.remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Lost password */
 .lost-password {
   font-size: 12px;
   color: #0071f39b;
   text-decoration: none;
   text-align: start;
   border: none;
+  display: inline-block;
+  margin-top: 6px;
 }
 
 .lost-password:hover {
   color: #000;
 }
 
+/* -- تحسين محاذاة داخل الصندوق (لكل الأزرار/عناصر) -- */
+.auth-boxs form > * {
+  /* نتأكد أن كل عنصر داخل الفورم يلتزم بعرض الحاوية (ولكن الأزرار تبقى fit-content) */
+}
+
+/* ===== ميديا كويريز (ريسبونسيف) ===== */
+
+/* شاشة صغيرة / تابلت - هنا نريد: 
+   - الزرار صغير على الشمال 
+   - التشيك بوكس + النص بجانبه 
+   - لا scroll يمين/شمال
+*/
+@media (max-width: 768px) {
+  .auth-boxs {
+    width: 100%;
+    max-width: 100%;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .auth-boxs h2 {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  small {
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .auth-boxs input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* ===== أهم تعديل هنا: الزرار + checkbox فى نفس السطر ومُنسقين ===== */
+  .form-options {
+    flex-direction: row;        /* يظلوا في صف واحد */
+    align-items: center;        /* يتسنتروا عموديًا */
+    justify-content: flex-start;/* على أقصى الشمال */
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* زرار الLogin - يبقى أصغر (غير ممتد) ويقف على الشمال */
+  .form-options button {
+    width: auto;               /* ماياخدش الشاشة كلها */
+    min-width: 90px;          /* عرض أقل منطقي */
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* زرار Register (لو خارج .form-options) */
+  .auth-boxs.reg button {
+    width: auto;
+    min-width: 90px;
+    padding: 8px 12px;
+    font-size: 14px;
+    align-self: flex-start; /* يخلي الزرار على الشمال داخل الفورم */
+    margin-top: 6px;
+  }
+
+  /* لو زرار الريجستر داخل نفس السياق */
+  .auth-boxs button[type="submit"] {
+    /* لو في حاجة خاصة، يمكن تعديلها هنا */
+  }
+
+  /* نص التذكير والcheckbox يبقوا متوازيين */
+  .remember {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* lost-password نحتفظ به سطر تحت لو محتاج */
+  .lost-password {
+    margin-top: 8px;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* ميديا أصغر (فون) - لضمان اللياقة أكتر */
+@media (max-width: 420px) {
+  .form-options button,
+  .auth-boxs.reg button {
+    min-width: 80px;
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  .remember {
+    font-size: 13px;
+  }
+
+  .auth-boxs {
+    padding: 12px;
+  }
+}

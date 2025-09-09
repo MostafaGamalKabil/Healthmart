@@ -42,8 +42,8 @@ body {
 .left-section {
   display: flex;
   align-items: center;
-  gap: 12px; /* مسافة صغيرة بين العنوان والزرارين */
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .header-title {
@@ -116,8 +116,9 @@ border: none;
 .health-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+  align-items: center;            
+
+  flex-wrap: nowrap; 
 }
 
 
