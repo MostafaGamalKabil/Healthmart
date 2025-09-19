@@ -126,8 +126,9 @@ border: none;
 .products-slider {
   width: 100%;
   padding: 30px 10px;
-  overflow: hidden !important; 
+  overflow: visible !important; 
   position: relative; /* مهم للأسهم */
+
 }
 
 /* الكارت */
