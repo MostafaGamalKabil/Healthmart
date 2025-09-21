@@ -22,9 +22,9 @@ const Support = () => {
           navigation
           spaceBetween={20}
           breakpoints={{
-            320: { slidesPerView: 1, spaceBetween: 15 }, // ✅ موبايل → عنصر واحد
-            768: { slidesPerView: 1, spaceBetween: 20 }, // ✅ تابلت → عنصر واحد
-            1024: { slidesPerView: 4, spaceBetween: 20 }, // ✅ شاشات كبيرة → كل العناصر جنب بعض
+            320: { slidesPerView: 1, spaceBetween: 15 }, 
+            768: { slidesPerView: 1, spaceBetween: 20 }, 
+            1024: { slidesPerView: 4, spaceBetween: 20 }, 
           }}
           className="products-slider"
         >
